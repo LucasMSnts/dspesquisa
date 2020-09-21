@@ -3,9 +3,9 @@ import { RecordsResponse } from './types';
 import axios from 'axios';
 import { formatdate } from './helpers';
 import Pagination from './Pagination';
+import Filters from '../../components/Filters';
 
 import './styles.css';
-import { Link } from 'react-router-dom';
 
 const BASE_URL = "https://sds1-lucsms.herokuapp.com";
 
@@ -24,13 +24,7 @@ const Records = () => {
 
   return (
     <div className="page-container">
-      <div className="filters-container records-actions">
-        <Link to="/charts">
-          <button className="action-filters">
-            VER GRÁFICOS
-          </button>
-        </Link>
-      </div>
+      <Filters link="/charts" linkText="VER GRÁFICOS" />
       <table className="records-table" cellPadding="0" cellSpacing="0">
         <thead>
           <tr>
